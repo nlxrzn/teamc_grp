@@ -16,7 +16,7 @@ with fp.open(mode ="r", encoding = "UTF-8", newline = "") as file:
      for row in reader:
         coh.append([int(row[0]), int(row[1])])
 
-def differences(coh):
+def coh_differences(coh):
     """Computes the difference in Cash-on-Hand if the current day is lower than the previous day.
 
     Args:
@@ -35,6 +35,6 @@ def differences(coh):
             difference_in_cash_on_hand.append((coh[day][0], cash_on_hand))
     return difference_in_cash_on_hand
 
-difference_in_cash_on_hand = differences(coh)
+difference_in_cash_on_hand = coh_differences(coh)
 for day, cash_on_hand in difference_in_cash_on_hand:
   print(f"Day: {day}, Amount: {cash_on_hand}")
