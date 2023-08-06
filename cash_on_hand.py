@@ -33,8 +33,6 @@ def coh_differences(coh):
         cash_on_hand = coh[day][1]
         if cash_on_hand < previous_cash_on_hand:
             difference_in_cash_on_hand.append((coh[day][0], cash_on_hand))
-    return difference_in_cash_on_hand
-
-difference_in_cash_on_hand = coh_differences(coh)
-for day, cash_on_hand in difference_in_cash_on_hand:
-  print(f"Day: {day}, Amount: {cash_on_hand}")
+    for day, cash_on_hand in difference_in_cash_on_hand:
+        print(f"Day: {day}, Amount: {cash_on_hand}")
+    return
