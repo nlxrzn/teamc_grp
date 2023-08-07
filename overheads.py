@@ -4,7 +4,7 @@ file_path = Path("teamc_grp\csv_report\overheadsfilecsv.csv")
 
 # Function to find highest overhead category and 
 # its corresponding expense
-def find_highest_overhead_category(ghoc):
+def find_highest_overhead_category(file_path):
     """
     Find the highest overhead category and its corresponding expense.
     1 parameter required 
