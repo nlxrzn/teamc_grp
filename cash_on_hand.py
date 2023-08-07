@@ -40,9 +40,11 @@ def coh_differences(coh):
 print(coh_differences(coh))
 
 
-# # # create a path object for cash on hand
-# file_path = Path.home()/""/""
+# # create a path object for cash on hand
+file_path = Path.home()/"summary_report.txt"
 
 # # # use mode ="a" to append data to file
-# with file_path.open(mode = "a") as file:
-#      file.write("\nf"Day: {day}, Amount: {cash_on_hand}"")
+# with file_path.open(mode = "a") as f:
+#      f.write("\n[CASH DEFICIT]")
+with open('summary_report.txt', 'a') as f:
+    f.write(f"\n[CASH DEFICIT]: {coh_differences(coh)}")
