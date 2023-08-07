@@ -5,10 +5,10 @@ import csv
 file_path = Path("overheadsfilecsv.csv")
 
 # Output file path
-output_file_path = Path("summary_report.txt")
+output_file_path = Path("teamc_grp/summary_report.txt")
 # Function to find highest overhead category and 
 # its corresponding expense
-def find_highest_overhead_category(fhoc):
+def find_highest_overhead_category(file_path):
     """
     Find the highest overhead category and its corresponding expense.
     1 parameter required 
