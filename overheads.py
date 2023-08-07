@@ -1,6 +1,6 @@
 from pathlib import Path
 import csv
-file_path = Path("teamc_grp\csv_report\overheadsfilecsv.csv")
+file_path = Path("teamc_grp/csv_report/overheadsfilecsv.csv")
 
 # Function to find highest overhead category and 
 # its corresponding expense
