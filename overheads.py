@@ -1,7 +1,7 @@
 from pathlib import Path
 import csv
 file_path = Path("teamc_grp/csv_report/overheadsfilecsv.csv")
-
+output_file_path = Path("teamc_grp/summary_report.txt")
 # Function to find highest overhead category and 
 # its corresponding expense
 def find_highest_overhead_category(file_path):
@@ -41,5 +41,5 @@ file_path = Path("teamc_grp\csv_report\overheadsfilecsv.csv")
 highest_category, max_expense = find_highest_overhead_category(file_path)
 
 # Write the summary to a text file
-with open('summary_report.txt', 'w') as f:
+with open(output_file_path, 'w') as f:
     f.write(f"[HIGHEST OVERHEAD]: {highest_category.upper()}: {max_expense:.2f}%")
