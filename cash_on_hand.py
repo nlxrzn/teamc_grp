@@ -3,7 +3,7 @@ import csv
 
 # Create a file path to the CSV file
 fp = Path("csv_report/cash_on_hand.csv")
-# output_file_path = Path("teamc_grp/summary_report.txt")
+
 #read the csv file to append day and ammount from the csv
 with fp.open(mode ="r", encoding = "UTF-8", newline = "") as file:
      reader = csv.reader(file)
@@ -35,16 +35,17 @@ def coh_differences(coh):
             difference_in_cash_on_hand.append((coh[day][0], cash_on_hand))
     for day, cash_on_hand in difference_in_cash_on_hand:
         print(f"Day: {day}, Amount: {cash_on_hand}")
-    return
+    return difference_in_cash_on_hand
 
-print(coh_differences(coh))
+differences = coh_differences(coh)
+
+    # Create a path object for the summary_report.txt in the home directory
+output_file_path = Path("summary_report.txt")
+
+    # Use mode="a" to append data to the file
+with output_file_path.open(mode="a", encoding="UTF-8") as output_file:
+    for day, cash_on_hand in differences:
+        output_file.write(f"\n[CASH DEFICIT]Day: {day}, Amount: USD{cash_on_hand}\n")
 
 
-# # create a path object for cash on hand
-file_path = Path.home()/"summary_report.txt"
 
-# # # use mode ="a" to append data to file
-# with file_path.open(mode = "a") as f:
-#      f.write("\n[CASH DEFICIT]")
-with open("summary_report.txt", 'a') as f:
-    f.write(f"\n[cash deficit]: --")
