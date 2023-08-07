@@ -36,3 +36,10 @@ def coh_differences(coh):
     for day, cash_on_hand in difference_in_cash_on_hand:
         print(f"Day: {day}, Amount: {cash_on_hand}")
     return
+
+# # # create a path object for cash on hand
+# file_path = Path.home()/""/""
+
+# # # use mode ="a" to append data to file
+# with file_path.open(mode = "a") as file:
+#      file.write("\nf"Day: {day}, Amount: {cash_on_hand}"")
