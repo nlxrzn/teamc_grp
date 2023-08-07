@@ -47,8 +47,15 @@ import csv
 file_path = Path.cwd() /"csv_report"/ "overheadsfilecsv.csv"
 # Function to find highest overhead category and 
 # its corresponding expense
-# Open and read the CSV file
-with file_path.open(mode="r") as csv_file:
+def find_highest_overhead_category(fhoc):
+    """
+    Find the highest overhead category and its corresponding expense.
+    Args: file_path (Path): The path to the CSV file containing overhead data.
+    Returns: tuple: A tuple containing the highest overhead category (str) and its corresponding expense (float).
+    """
+    overhead_data = []
+    # Open and read the CSV file
+    with file_path.open(mode="r") as csv_file:
         csv_reader = csv.reader(csv_file)
         # Skip the header row
         next(csv_reader)  
