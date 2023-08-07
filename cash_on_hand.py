@@ -37,6 +37,9 @@ def coh_differences(coh):
         print(f"Day: {day}, Amount: {cash_on_hand}")
     return
 
+print(coh_differences(coh))
+
+
 # # # create a path object for cash on hand
 # file_path = Path.home()/""/""
 
