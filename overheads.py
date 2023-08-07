@@ -2,11 +2,11 @@ from pathlib import Path
 import csv
 # Function to find highest overhead category and 
 # its corresponding expense
-def find_highest_overhead_category(fhoc):
+def find_highest_overhead_category(file_path):
     """
     Find the highest overhead category and its corresponding expense.
-    Args: file_path (Path): The path to the CSV file containing overhead data.
-    Returns: tuple: A tuple containing the highest overhead category (str) and its corresponding expense (float).
+    1 parameter is required for the code
+    This parameter represents the path to the CSV file. It is passed to the function when calling it.
     """
     overhead_data = []
     # Open and read the CSV file
