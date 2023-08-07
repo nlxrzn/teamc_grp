@@ -47,7 +47,6 @@ import csv
 file_path = Path.cwd() /"csv_report"/ "overheadsfilecsv.csv"
 # Function to find highest overhead category and 
 # its corresponding expense
-<<<<<<< HEAD
 
 # Open and read the CSV file
 with file_path.open(mode="r") as csv_file:
@@ -60,9 +59,6 @@ with file_path.open(mode="r") as csv_file:
         expense = float(row[1])
         overhead_data.append((category, expense))
 def find_highest_overhead_category():
-=======
-def find_highest_overhead_category(file_path):
->>>>>>> 449eb2aa042b69142ab0955c0b66f9231f122768
     """
     Find the highest overhead category and its corresponding expense.
     Args: file_path (Path): The path to the CSV file containing overhead data.
