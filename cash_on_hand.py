@@ -46,7 +46,7 @@ output_file_path = Path("summary_report.txt")
     # Use mode="a" to append data to the file
 with open(output_file_path, "a") as f:
     for day, cash_on_hand in differences:
-        f.write(f"\n[CASH DEFICIT]Day: {day}, Amount: USD{cash_on_hand}\n")
+        f.write(f"\n[CASH DEFICIT]Day: {day}, Amount: USD{cash_on_hand}")
 
 
 
