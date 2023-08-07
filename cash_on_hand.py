@@ -2,7 +2,7 @@ from pathlib import Path
 import csv
 
 # Create a file path to the CSV file
-fp = Path.cwd() / "csv_report" / "cash_on_hand.csv"
+fp = Path("csv_report\cash_on_hand.csv")
 
 #read the csv file to append day and ammount from the csv
 with fp.open(mode ="r", encoding = "UTF-8", newline = "") as file:
