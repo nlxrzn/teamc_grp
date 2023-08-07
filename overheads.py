@@ -1,6 +1,15 @@
 from pathlib import Path
 import csv
 file_path = Path("teamc_grp\csv_report\overheadsfilecsv.csv")
+overhead_data = []
+with file_path.open(mode="r") as csv_file:
+        csv_reader = csv.reader(csv_file)
+        # Skip the header row
+        next(csv_reader)  
+        for row in csv_reader:
+            category = row[0]
+            expense = float(row[1])
+            overhead_data.append((category, expense))
 
 # Function to find highest overhead category and 
 # its corresponding expense
@@ -10,16 +19,16 @@ def find_highest_overhead_category(file_path):
     1 parameter required 
     The parameter represents the path to the CSV file. It is passed to the function when calling it.
     """
-    overhead_data = []
-    # Open and read the CSV file
-    with file_path.open(mode="r") as csv_file:
-        csv_reader = csv.reader(csv_file)
-        # Skip the header row
-        next(csv_reader)  
-        for row in csv_reader:
-            category = row[0]
-            expense = float(row[1])
-            overhead_data.append((category, expense))
+    # overhead_data = []
+    # # Open and read the CSV file
+    # with file_path.open(mode="r") as csv_file:
+    #     csv_reader = csv.reader(csv_file)
+    #     # Skip the header row
+    #     next(csv_reader)  
+    #     for row in csv_reader:
+    #         category = row[0]
+    #         expense = float(row[1])
+    #         overhead_data.append((category, expense))
 
     # Initialise variables to track highest overhead
     max_expense = 0
