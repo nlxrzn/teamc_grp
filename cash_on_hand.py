@@ -2,10 +2,6 @@ from pathlib import Path
 import csv
 
 # Create a file path to the CSV file
-<<<<<<< HEAD
-=======
-fp = Path("teamc_grp\csv_report\cash_on_hand.csv")
->>>>>>> 1d31e4b77a80eb8f675e2d9cd7a6cd6801f0d930
 
 def coh_differences():
     """Computes the difference in Cash-on-Hand if the current day is lower than the previous day.
@@ -41,27 +37,15 @@ def coh_differences():
             
     return difference_in_cash_on_hand
 
-<<<<<<< HEAD
 cash_differences = coh_differences()
-=======
-
-differences = coh_differences(fp)
->>>>>>> 1d31e4b77a80eb8f675e2d9cd7a6cd6801f0d930
 
     # Create a path object for the summary_report.txt in the home directory
 output_file_path = Path("teamc_grp/summary_report.txt")
 
     # Use mode="a" to append data to the file
-<<<<<<< HEAD
 with output_file_path.open(mode="a", encoding="UTF-8") as output_file:
     for day, difference in cash_differences:
         output_file.write(f"\n[CASH DEFICIT]Day: {day}, Amount: USD{difference}")
-=======
-
-with open(output_file_path, "a") as f:
-    for day, cash_on_hand in differences:
-        f.write(f"\n[CASH DEFICIT]Day: {day}, Amount: USD{cash_on_hand}")
->>>>>>> 1d31e4b77a80eb8f675e2d9cd7a6cd6801f0d930
 
 
 

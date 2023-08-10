@@ -1,13 +1,8 @@
 from pathlib import Path
 import csv
 
-<<<<<<< HEAD
-# file_path = Path("csv_report/ProfitAndLoss.csv")
+
 def netprofit_difference():
-=======
-file_path = Path("teamc_grp\csv_report\ProfitAndLoss.csv")
-def netprofit_difference(file_path):
->>>>>>> 1d31e4b77a80eb8f675e2d9cd7a6cd6801f0d930
     net_profit_diff = []
 
     file_path = Path.cwd()/"csv_report"/"ProfitAndLoss.csv"
@@ -29,13 +24,8 @@ def netprofit_difference(file_path):
             
     return net_profit_diff
 
-<<<<<<< HEAD
 
 difference_list = netprofit_difference()
-=======
-csv_file_path = Path("teamc_grp\csv_report\ProfitAndLoss.csv")
-difference_list = netprofit_difference(file_path)
->>>>>>> 1d31e4b77a80eb8f675e2d9cd7a6cd6801f0d930
 
 # Writing to the output file
 output_file_path = Path("summary_report.txt")
