@@ -5,12 +5,13 @@ import csv
 def netprofit_difference():
     """
     Calculates the differences in net Profit if the current day is lower than the previous day. 
-    No parameter needed 
-    
+    No parameter needed.
+    Function reiterates data to calculate incremental profit deficit.
     """
     net_profit_diff = []
 
-    file_path = Path.cwd()/"csv_report"/"ProfitAndLoss.csv"
+    # Create file path to the csv file 
+    file_path = Path.cwd() / "csv_reports" / "ProfitAndLoss.csv"
 
     with file_path.open(mode="r") as csv_file:
         csv_reader = csv.reader(csv_file)
@@ -18,6 +19,7 @@ def netprofit_difference():
         next(csv_reader)  
         previous_net_profit = 0
         
+        # reiterate through data to determine profit deficit
         for row in csv_reader:
             day = int(row[0])
             current_net_profit = int(row[4])
@@ -32,11 +34,8 @@ def netprofit_difference():
 
 difference_list = netprofit_difference()
 
-# Writing to the output file
-output_file_path = Path("summary_report.txt")
-
 # Use mode="a" to append data to the file
-with output_file_path.open(mode="a", encoding="UTF-8") as output_file:
+with open(Path("summary_report.txt"), 'a') as f:
     for day, difference in difference_list:
-        output_file.write(f"\n[PROFIT DEFICIT] DAY: {day}, AMOUNT: USD{difference}")
+        f.write(f"\n[PROFIT DEFICIT] DAY: {day}, AMOUNT: USD{difference}")
 

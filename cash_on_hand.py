@@ -10,10 +10,10 @@ def coh_differences():
     difference_in_cash_on_hand = []
 
     # Create a file path to the CSV file
-    fp = Path.cwd() / "csv_report" / "cash_on_hand.csv"
+    file_path = Path.cwd() / "csv_reports" / "cash_on_hand.csv"
 
     # Open CSV file
-    with fp.open(mode="r", encoding="UTF-8", newline="") as file:
+    with file_path.open(mode="r", encoding="UTF-8", newline="") as file:
         reader = csv.reader(file)
         next(reader)  # skip header
 
@@ -34,10 +34,7 @@ def coh_differences():
 
 cash_differences = coh_differences()
 
-# Create a path object for the summary_report.txt in the home directory
-output_file_path = Path("summary_report.txt")
-
 # Use mode="a" to append data to the file
-with output_file_path.open(mode="a", encoding="UTF-8") as output_file:
+with open(Path("summary_report.txt"), 'a') as f:
     for day, difference in cash_differences:
-        output_file.write(f"\n[CASH DEFICIT] DAY: {day}, AMOUNT: USD{difference}")  # Format the difference as a float with 2 decimal places
+        f.write(f"\n[CASH DEFICIT] DAY: {day}, AMOUNT: USD{difference}")  # Format the difference as a float with 2 decimal places
