@@ -11,7 +11,7 @@ def find_highest_overhead_category():
 
     """
     # Path to the CSV file 
-    fp = Path.cwd() / "csv_reports" / "overheadsfilecsv.csv"
+    fp = Path.cwd() / "csv_reports" / "Overheads.csv"
     overhead_data = []
     # Open and read the CSV file
     with fp.open(mode="r") as csv_file:

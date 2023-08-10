@@ -12,7 +12,7 @@ def netprofit_difference():
     net_profit_diff = []
 
     # Create file path to the csv file 
-    file_path = Path.cwd() / "csv_reports" / "ProfitAndLoss.csv"
+    file_path = Path.cwd() / "csv_reports" / "Profits_and_Loss.csv"
 
     with file_path.open(mode="r") as csv_file:
         csv_reader = csv.reader(csv_file)

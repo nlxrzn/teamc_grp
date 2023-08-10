@@ -11,7 +11,7 @@ def coh_differences():
     difference_in_cash_on_hand = []
 
     # Create a file path to the CSV file
-    file_path = Path.cwd() / "csv_reports" / "cash_on_hand.csv"
+    file_path = Path.cwd() / "csv_reports" / "Cash_on_Hand.csv"
 
     # Open CSV file
     with file_path.open(mode="r", encoding="UTF-8", newline="") as file:
