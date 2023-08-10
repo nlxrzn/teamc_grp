@@ -6,8 +6,9 @@ import csv
 def find_highest_overhead_category():
     """
     Find the highest overhead category and its corresponding expense.
-    0 parameter required 
+    No parameter required 
     Function reiterate through data to find overhead category and expense when called.
+
     """
     # Path to the CSV file 
     fp = Path.cwd() / "csv_reports" / "overheadsfilecsv.csv"
@@ -31,7 +32,7 @@ def find_highest_overhead_category():
     for category, expense in overhead_data:
         if expense > max_expense:
             max_expense = expense
-            highest_overhead_category = category
+            highest_overhead_category = category   # Move this line within the loop
     
     return highest_overhead_category, max_expense
     

@@ -2,10 +2,11 @@ from pathlib import Path
 import csv
 
 def coh_differences():
-    """Computes the difference in Cash-on-Hand if the current day is lower than the previous day.
+    """
+    Function calculates incremental difference in cash deficit
+    No parameters needed
+    Function reiterates through data to determine cash deifict 
 
-    Returns:
-    A list of tuples, where each tuple contains the Day and Cash-on-Hand difference for a single day.
     """
     difference_in_cash_on_hand = []
 
@@ -17,12 +18,12 @@ def coh_differences():
         reader = csv.reader(file)
         next(reader)  # skip header
 
-        # Initialize the previous_cash_on_hand
+        # Initialise the previous_cash_on_hand
         previous_cash_on_hand = 0.0  # Change this to a floating-point number
 
         for row in reader:
             day = int(row[0])
-            cash_on_hand = int(row[1])  # Parse the cash on hand as a float
+            cash_on_hand = int(row[1])  # Parse the cash on hand as an integer
 
             if cash_on_hand < previous_cash_on_hand:
                 difference = previous_cash_on_hand - cash_on_hand

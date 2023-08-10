@@ -7,6 +7,7 @@ def netprofit_difference():
     Calculates the differences in net Profit if the current day is lower than the previous day. 
     No parameter needed.
     Function reiterates data to calculate incremental profit deficit.
+
     """
     net_profit_diff = []
 
@@ -19,7 +20,7 @@ def netprofit_difference():
         next(csv_reader)  
         previous_net_profit = 0
         
-        # reiterate through data to determine profit deficit
+        # Reiterate through data to determine profit deficit
         for row in csv_reader:
             day = int(row[0])
             current_net_profit = int(row[4])
@@ -27,7 +28,7 @@ def netprofit_difference():
                 difference =previous_net_profit - current_net_profit
                 net_profit_diff.append((day, difference))  # Append as a tuple
                 
-            previous_net_profit = current_net_profit
+            previous_net_profit = current_net_profit   # Move this line within the loop
             
     return net_profit_diff
 
