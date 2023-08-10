@@ -40,4 +40,4 @@ output_file_path = Path("summary_report.txt")
 # Use mode="a" to append data to the file
 with output_file_path.open(mode="a", encoding="UTF-8") as output_file:
     for day, difference in cash_differences:
-        output_file.write(f"\n[CASH DEFICIT] Day: {day}, Amount: USD {difference}")  # Format the difference as a float with 2 decimal places
+        output_file.write(f"\n[CASH DEFICIT] DAY: {day}, AMOUNT: USD{difference}")  # Format the difference as a float with 2 decimal places

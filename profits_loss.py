@@ -3,6 +3,11 @@ import csv
 
 
 def netprofit_difference():
+    """
+    Calculates the differences in net Profit if the current day is lower than the previous day. 
+    No parameter needed 
+    
+    """
     net_profit_diff = []
 
     file_path = Path.cwd()/"csv_report"/"ProfitAndLoss.csv"
@@ -33,6 +38,5 @@ output_file_path = Path("summary_report.txt")
 # Use mode="a" to append data to the file
 with output_file_path.open(mode="a", encoding="UTF-8") as output_file:
     for day, difference in difference_list:
-        output_file.write(f"\n[PROFIT DEFICIT] Day: {day}, Amount: USD {difference}")
-
+        output_file.write(f"\n[PROFIT DEFICIT] DAY: {day}, AMOUNT: USD{difference}")
 
