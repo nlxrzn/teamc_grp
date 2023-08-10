@@ -7,13 +7,13 @@ def find_highest_overhead_category():
     """
     Find the highest overhead category and its corresponding expense.
     0 parameter required 
-    The parameter represents the path to the CSV file. It is passed to the function when calling it.
+    Function reiterate through data to find overhead category and expense when called.
     """
     # Path to the CSV file 
-    fp = Path.cwd() / "csv_report" / "overheadsfilecsv.csv"
+    file_path = Path.cwd() / "csv_report" / "overheadsfilecsv.csv"
     overhead_data = []
     # Open and read the CSV file
-    with fp.open(mode="r") as csv_file:
+    with file_path.open(mode="r") as csv_file:
         csv_reader = csv.reader(csv_file)
         # Skip the header row
         next(csv_reader)  
@@ -38,5 +38,5 @@ def find_highest_overhead_category():
 highest_category, max_expense = find_highest_overhead_category()
 
 # Write the summary to a text file
-with open(Path("teamc_grp"), 'w') as f:
+with open(Path("summary_report.txt"), 'w') as f:
     f.write(f"[HIGHEST OVERHEAD]: {highest_category.upper()}: {max_expense:.2f}%")
