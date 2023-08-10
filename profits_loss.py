@@ -35,4 +35,4 @@ with output_file_path.open(mode="a", encoding="UTF-8") as output_file:
     for day, difference in difference_list:
         output_file.write(f"\n[PROFIT DEFICIT] Day: {day}, Amount: USD {difference}")
 
-
+aaa
