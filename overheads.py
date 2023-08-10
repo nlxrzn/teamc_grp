@@ -10,10 +10,10 @@ def find_highest_overhead_category():
     The parameter represents the path to the CSV file. It is passed to the function when calling it.
     """
     # Path to the CSV file 
-    file_path = Path("overheadsfilecsv.csv")
+    fp = Path.cwd() / "csv_report" / "overheadsfilecsv.csv"
     overhead_data = []
     # Open and read the CSV file
-    with file_path.open(mode="r") as csv_file:
+    with fp.open(mode="r") as csv_file:
         csv_reader = csv.reader(csv_file)
         # Skip the header row
         next(csv_reader)  
