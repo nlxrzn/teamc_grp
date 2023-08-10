@@ -40,7 +40,7 @@ def coh_differences():
 cash_differences = coh_differences()
 
     # Create a path object for the summary_report.txt in the home directory
-output_file_path = Path("teamc_grp/summary_report.txt")
+output_file_path = Path("summary_report.txt")
 
     # Use mode="a" to append data to the file
 with output_file_path.open(mode="a", encoding="UTF-8") as output_file:
